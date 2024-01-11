@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Baze podataka - Amar Koric - Projekat</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <style>
+      a {
+        font-size: 18px;
+        font-family: sans-serif;
+        font-weight: bold;
+      }
+      p {
+        font-size: 18px;
+        font-family: sans-serif;
+        font-weight: bold;
+      }
+      li {
+        padding: 10px;
+        margin-bottom: 30px;
+      }
+      form {
+        padding: 10px;
+        margin-bottom: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+    <li><a href="http://localhost:3000/proizvodi">Pregledajte listu proizvoda</a></li>
+      <li>
+        <p>Saznajte status narudzbe!</p>
+        <form action="/status" method="post">
+        <input type="number" placeholder="Unesite id narudzbe" name="id">
+          <button type="submit">OK</button>
+        </form>
+      </li>
+
+      <li>
+        <p>Zaduzenje vozila</p>
+        <ul>
+          <form action="/getz" method="get"><li>GET zaduzenja vozila <button type="submit">Get zaduzenja</button></li></form>
+          <form action="/postzaduzenje<% %>" method="POST"><li>POST zaduzenje vozila <input type="number" placeholder="Unesite id dostavljaca" name="id_d">
+              <input type="number" placeholder="Unesite id vozila" name="id_v"><button type="submit">Dodaj zaduzenje</button></li></form>
+
+        </ul>
+
+      </li>
+    </ul>
+  </body>
+</html>

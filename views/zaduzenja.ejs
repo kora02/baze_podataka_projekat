@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zaduzenja vozila</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <th>ID</th>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Vozilo</th>
+            <th>Datum prijave</th>
+            <th>Datum odjave</th>
+        </thead>
+
+        <% for(let i = 0; i < rows[0].length; i++) {%>
+        <tr>
+            <td><%= rows[0][i].zaduzenje_vozila_id %></td>
+            <td><%= rows[0][i].ime %></td>
+            <td><%= rows[0][i].prezime %></td>
+            <td><%= rows[0][i].tip_vozila %></td>
+            <td><%= rows[0][i].datum_i_vrijeme_prijave %></td>
+            <% if(rows[0][i].datum_i_vrijeme_odjave !== null) {%>
+                <td><%= rows[0][i].datum_i_vrijeme_odjave %></td>
+            <% } else { %>
+                <td>Vozilo nije odjavljeno</td>
+            <% } %>
+        </tr>
+        <% } %>
+    </table>
+
+</body>
+</html>

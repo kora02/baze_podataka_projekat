@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista proizvoda</title>
+
+    <style>
+        img {
+            height: 200px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <th>Sifra proizvoda</th>
+            <th>Naziv proizvoda</th>
+            <th>Sifra kategorije</th>
+            <th>Cijena proizvoda</th>
+            <th>SLika</th>
+        </thead>
+    <% for(let i = 0; i < rows[0].length; i++) {  %>
+        <tr>
+            <td><%= rows[0][i].sifra_proizvoda %></td>
+            <td><%= rows[0][i].naziv_proizvoda %></td>
+            <td><%= rows[0][i].sifra_kategorije %></td>
+            <td><%= rows[0][i].cijena_proizvoda %></td>
+            <td>
+            <% if(rows[0][i].slika !== null) { %>
+            <img src="<%= rows[0][i].slika %>" alt="">
+                <%} %>
+            </td>
+        </tr>
+        <% } %>
+
+
+    </table>
+</body>
+</html>
